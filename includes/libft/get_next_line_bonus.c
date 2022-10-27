@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 13:16:06 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/26 17:04:56 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:43:26 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "libft.h"
 
-char	*free_it(char *buffer, char *r_buffer, char *rtn)
+static char	*free_it(char *buffer, char *r_buffer, char *rtn)
 {
 	if (buffer)
 		free (buffer);
@@ -21,7 +21,7 @@ char	*free_it(char *buffer, char *r_buffer, char *rtn)
 	return (rtn);
 }
 
-char	*sub_buffer(char *buffer, char *newline)
+static char	*sub_buffer(char *buffer, char *newline)
 {
 	newline = ft_strdup(newline);
 	buffer = free_it(buffer, NULL, NULL);
@@ -33,7 +33,7 @@ char	*sub_buffer(char *buffer, char *newline)
 	return (buffer);
 }
 
-char	*make_line(char *buffer, char *line, char *newline)
+static char	*make_line(char *buffer, char *line, char *newline)
 {
 	if (!newline)
 		line = ft_strdup(buffer);
@@ -43,7 +43,7 @@ char	*make_line(char *buffer, char *line, char *newline)
 	return (line);
 }
 
-char	*read_file(int fd, char *buffer, char *newline)
+static char	*read_file(int fd, char *buffer, char *newline)
 {
 	char	*r_buffer;
 	int		bytes;
@@ -64,7 +64,7 @@ char	*read_file(int fd, char *buffer, char *newline)
 		if (bytes == 0)
 			return (free_it(NULL, r_buffer, buffer));
 		r_buffer[bytes] = 0;
-		buffer = ft_strjoin(buffer, r_buffer);
+		buffer = ft_strjoin_gnl(buffer, r_buffer);
 		newline = ft_strchr(buffer, '\n');
 	}
 	return (free_it(NULL, r_buffer, buffer));
