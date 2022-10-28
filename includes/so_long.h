@@ -8,7 +8,7 @@
 # include "mlx/minilibx_opengl/mlx.h"
 // # include "mlx/minilibx-linux/mlx.h"
 
-typdef struct s_game
+typedef struct s_game
 {
 	char 		**map;
 	// size_t	empty; // 0
@@ -18,10 +18,9 @@ typdef struct s_game
 	// size_t	position // P = départ
 	// size_t	pos_x;
 	// size_t	pos_y;
-}	t_game
+}				t_game;
 
-char	**read_file(char *file)
-bool	read_file();
+char	**read_file(char *file);
 // t_game	set_data();
 
 #endif
