@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp_rev.c                                      :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:45:24 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/28 11:38:33 by mchampag         ###   ########.fr       */
+/*   Created: 2022/10/28 12:17:06 by mchampag          #+#    #+#             */
+/*   Updated: 2022/10/28 12:17:29 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-bool	strncmp_rev(const char *bigger, const char *smaller, size_t len)
+void	*ft_calloc(size_t number_element, size_t size_element)
 {
-	if (len == 0)
-		return (0);
-	--len;
-	while (bigger[len] && smaller[len] && bigger[len] == smaller[len])
-	{
-		if (!len--)
-			if (bigger[len])
-				return (1);
-	}
-	return (0);
+	char	*allocated_area;
+
+	allocated_area = malloc(number_element * size_element);
+	if (!allocated_area)
+		return (NULL);
+	ft_memset(allocated_area, 0, (number_element * size_element));
+	return (allocated_area);
 }
