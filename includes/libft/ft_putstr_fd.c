@@ -1,35 +1,23 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp_rev.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:45:24 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/31 14:57:36 by mchampag         ###   ########.fr       */
+/*   Created: 2022/10/31 12:48:10 by mchampag          #+#    #+#             */
+/*   Updated: 2022/10/31 12:53:04 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-bool	strncmp_rev(const char *bigger, const char *smaller, size_t len)
+void	ft_putstr_fd(char *str, int fd, char newline)
 {
-	char	*big;
-	size_t	len_bigger;
-	
-	if (len == 0)
-		return (0);
-	len_bigger = ft_strlen(bigger);
-	if (len_bigger > len)
-	{
-		big = bigger + len_bigger - len;
-		--len;
-		while (bigger[len] && smaller[len] && bigger[len] == smaller[len])
-		{
-			if (!len--)
-				if (bigger[len])
-					return (1);
-		}
-	}
-	return (0);
+	if (!str)
+		return ;
+	write(fd, str, ft_strlen(str));
+	if (newline == 'n')
+		write(fd, "\n", 1);
 }

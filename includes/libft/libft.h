@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 10:39:34 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/27 15:20:28 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:43:10 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 */
 
 char	*get_next_line(int fd);
+void	ft_putstr_fd(char *str, int fd, char newline);
 char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *str1, char const *str2, int free_1);
 size_t	ft_strlen(const char *str);
