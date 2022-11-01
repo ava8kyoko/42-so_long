@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp_rev.c                                      :+:      :+:    :+:   */
+/*   free_it.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:45:24 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/01 12:37:35 by mchampag         ###   ########.fr       */
+/*   Created: 2022/11/01 12:17:26 by mchampag          #+#    #+#             */
+/*   Updated: 2022/11/01 12:17:44 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-size_t	strncmp_rev(const char *bigger, const char *smaller, size_t len)
+void	free_it(char *str, char **tab)
 {
-	char	*big;
-	size_t	len_bigger;
+	int		i;
 	
-	if (len == 0)
-		return (0);
-	len_bigger = ft_strlen(bigger);
-	if (len_bigger > len)
+	if (str)
+		free(str);
+	if (tab)
 	{
-		big = bigger + (len_bigger - len);
-		--len;
-		while (bigger[len] && smaller[len] && bigger[len] == smaller[len])
-		{
-			if (!len--)
-				if (bigger[len])
-					return (len_bigger);
-		}
+		i = 0;
+		while (tab[i])
+			free(tab[i++]);
+		free(tab);
 	}
-	return (0);
 }

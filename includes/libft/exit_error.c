@@ -1,23 +1,21 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   exit_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:48:10 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/31 12:53:04 by mchampag         ###   ########.fr       */
+/*   Created: 2022/11/01 12:18:31 by mchampag          #+#    #+#             */
+/*   Updated: 2022/11/01 12:19:00 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(int fd, char *str, char newline)
+void	exit_error(char *message, char *str, char **tab)
 {
-	if (!str)
-		return ;
-	write(fd, str, ft_strlen(str));
-	if (newline == 'n')
-		write(fd, "\n", 1);
+	if (str || tab)
+		free_it(str, tab);
+	ft_putstr_fd(2, "open error", 'n');
+	exit(EXIT_FAILURE);
 }

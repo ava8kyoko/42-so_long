@@ -6,13 +6,14 @@
 #    By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 15:12:26 by mchampag          #+#    #+#              #
-#    Updated: 2022/10/27 11:54:22 by mchampag         ###   ########.fr        #
+#    Updated: 2022/11/01 12:32:55 by mchampag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	=	libft.a
-SRCS 	=	get_next_line_bonus.c \
+SRCS 	=	exit_error.c free_it.c \
 			ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlen.c ft_strnstr.c \
+			get_next_line_bonus.c strncmp_rev.c
 OBJS 	=	${SRCS:.c=.o}
 HEADER	=	./
 GNL_HEADER = get_next_line/

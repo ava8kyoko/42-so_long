@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid.c                                            :+:      :+:    :+:   */
+/*   valid_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 16:08:44 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/28 13:44:32 by mchampag         ###   ########.fr       */
+/*   Created: 2022/11/01 12:48:48 by mchampag          #+#    #+#             */
+/*   Updated: 2022/11/01 13:05:08 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft/libft.h"
+#include "../includes/so_long.h"
 
-// bool	check_dimensions(char *map)
-// {
-// 	return (0);
-// }
-
-bool	valid_map(char *file)
+bool	valid_map(t_data *data)
 {
 	bool valid;
 	
-	if (file)
-	{
-		if ()
+	// if (file)
+	// {
+	// 	if ()
 			
-	}
-	perror("Not a valid map");
-	return (0);
-}
-
-bool	valid_file(char *file)
-{
-	size_t	len;
-	
-	if (file)
-		if (ft_strlen(file)
-			&& strncmp_rev(file + ft_strlen(file) + 4, ".ber", 4))
-			return (1);
-	perror("Not a valid file name");
+	// }
+	exit_error("Not a valid map", 0, data->map);
 	return (0);
 }

@@ -1,7 +1,7 @@
 PROG	= pipex
 
 # FILES AND OBJECTS MANDATORY
-SRCS 	= srcs/main.c srcs/utils.c
+SRCS 	= srcs/main.c srcs/init.c
 OBJS 	= ${SRCS:.c=.o}
 MAIN	= srcs/main.c
 
