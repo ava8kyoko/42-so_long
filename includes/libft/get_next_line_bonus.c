@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 13:16:06 by mchampag          #+#    #+#             */
-/*   Updated: 2022/10/27 11:43:26 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/01 20:13:27 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*sub_buffer(char *buffer, char *newline)
 	buffer = free_it(buffer, NULL, NULL);
 	if (newline)
 	{
-		buffer = ft_substr(newline, 1, ft_strlen(newline));
+		buffer = ft_substr_gnl(newline, 1, ft_strlen(newline));
 		free(newline);
 	}
 	return (buffer);
@@ -38,7 +38,7 @@ static char	*make_line(char *buffer, char *line, char *newline)
 	if (!newline)
 		line = ft_strdup(buffer);
 	else
-		line = ft_substr(buffer, 0, (ft_strlen(buffer) + 1)
+		line = ft_substr_gnl(buffer, 0, (ft_strlen(buffer) + 1)
 				- ft_strlen(newline));
 	return (line);
 }

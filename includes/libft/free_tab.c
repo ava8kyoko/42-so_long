@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_map.c                                        :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 12:48:48 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/01 13:05:08 by mchampag         ###   ########.fr       */
+/*   Created: 2022/11/01 12:17:26 by mchampag          #+#    #+#             */
+/*   Updated: 2022/11/01 19:58:52 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "libft.h"
 
-bool	valid_map(t_data *data)
+void	free_tab(char **tab)
 {
-	bool valid;
-	
-	// if (file)
-	// {
-	// 	if ()
-			
-	// }
-	exit_error("Not a valid map", 0, data->map);
-	return (0);
+	int		i;
+
+	if (tab)
+	{
+		i = 0;
+		while (tab[i])
+			free(tab[i++]);
+		free(tab);
+	}
 }
+
+// void	free_it(char *str, char **tab)
+// {
+// 	int		i;
+	
+// 	if (str)
+// 		free(str);
+// 	if (tab)
+// 	{
+// 		i = 0;
+// 		while (tab[i])
+// 			free(tab[i++]);
+// 		free(tab);
+// 	}
+// }

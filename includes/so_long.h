@@ -26,7 +26,9 @@ typedef struct s_data
 	// size_t	pos_y;
 }				t_data;
 
-void	init_data(t_data *data, char *file);
-bool	valid_map(t_data *data);
+int		main(int argc, char **argv);
+
+void	init_map(t_data *data, char *file);
+// bool	valid_map(t_data *data);
 
 #endif

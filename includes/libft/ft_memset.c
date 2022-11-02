@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_it.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 12:17:26 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/01 12:17:44 by mchampag         ###   ########.fr       */
+/*   Created: 2022/11/01 23:56:41 by mchampag          #+#    #+#             */
+/*   Updated: 2022/11/01 23:57:13 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-void	free_it(char *str, char **tab)
+void	*ft_memset(void *str, int character, size_t size_tofill)
 {
-	int		i;
-	
-	if (str)
-		free(str);
-	if (tab)
-	{
-		i = 0;
-		while (tab[i])
-			free(tab[i++]);
-		free(tab);
-	}
+	char	*new_str;
+
+	new_str = str;
+	while (size_tofill--)
+		*new_str++ = (unsigned char) character;
+	return (str);
 }
