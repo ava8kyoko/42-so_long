@@ -17,9 +17,7 @@ MINILIBX_PATH = includes/mlx/minilibx_opengl/
 
 # Sources files
 S = srcs/
-SRCS_FILES =	main.c \
-				init_map.c \
-				valid_map.c
+SRCS_FILES =	my_mlx_fonc.c so_long.c valid_file.c valid_map.c
 SRCS = $(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion

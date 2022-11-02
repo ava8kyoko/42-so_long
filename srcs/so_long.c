@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:56:22 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/02 03:03:10 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:56:03 by acid.burn        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,12 @@
 int		main(int argc, char **argv) // mpa file = .ber
 {
 	t_data	data;
-	void	*dragon;
-	int		tile_size;
 
-	if (argc == 2)
+	if (argc == 2 && argv)
 	{
-		init_map(&data, argv[1]);
-		printf("%s\n", argv[1]);
-		data.mlx = mlx_init();
-		data.mlx_x = 1000;
-		data.mlx_y = 1000;
-		data.mlx_win = mlx_new_window(data.mlx, data.mlx_x, data.mlx_y,
-			"so_long");
-		dragon = mlx_xpm_file_to_image(data.mlx, "daenerys.xpm", &tile_size,
-			&tile_size);
-		mlx_put_image_to_window(data.mlx, data.mlx_win, dragon, 0, 0);
-		mlx_loop(data.mlx);
-		// init_();
+		validate_file(&data, argv[1]);
+		validate_map(&data);
+		mlx_game(&data);
 		// close(data.file);
 	}
 	exit_error("no map", 0);
