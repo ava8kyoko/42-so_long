@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:56:22 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/02 02:43:36 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/02 03:03:10 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int argc, char **argv) // mpa file = .ber
 
 	if (argc == 2)
 	{
-		// init_map(&data, argv[1]);
+		init_map(&data, argv[1]);
 		printf("%s\n", argv[1]);
 		data.mlx = mlx_init();
 		data.mlx_x = 1000;

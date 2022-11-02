@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:08:44 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/02 01:18:11 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/02 03:13:33 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ static char	**read_file(char *file, size_t max_line)
 		exit_error("open error", 0);
 	new_file = ft_calloc(18, sizeof(char));
 	if (!new_file)
-		exit_error("ft_calloc file error", new_file);
+		exit_error("ft_calloc file error", 0);
 	i = 0;
 	while (max_line--)
 		new_file[i++] = get_next_line(fd);
-	if (!new_file || !new_file[0])
-		exit_error("reading file error", new_file);
+	if (!new_file[0])
+		exit_error("reading file error", 0);
 	return (new_file);
 }
 
@@ -41,12 +41,7 @@ static void validate_filename(char *file)
 void	init_map(t_data *data, char *file)
 {
 	validate_filename(file);
-	// data->map = ft_calloc(18, sizeof(char)); // check if possible to know before
-	// if (!data->map)
-	// 	exit_error("ft_calloc map error", data->map);
 	data->map = read_file(file, 18); // max height
-	if (!data->map)
-		exit_error("read_file map error", data->map);
 	data->collectable = 0; // C
 	data->exit = 0; // E
 	data->position = 0; // P = départ
