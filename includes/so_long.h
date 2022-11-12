@@ -16,6 +16,8 @@ typedef struct s_data
 ** File
 */
 	char 	**map;
+	size_t	height;
+	size_t	width;
 
 /*
 ** mlx values
@@ -29,17 +31,16 @@ typedef struct s_data
 /*
 ** Images
 */
-
 	void	*player;
-	void	*start;
+	void	*position;
 	void	*collectable;
 	void	*exit;
 	int		tile_size;
 	// size_t	empty; // 0
 	// size_t	wall; // 1
+	size_t	nb_position; // P = départ
 	size_t	nb_collectable; // C
 	size_t	nb_exit; // E
-	size_t	nb_position; // P = départ
 	// size_t	pos_x;
 	// size_t	pos_y;
 }				t_data;

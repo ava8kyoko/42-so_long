@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_fonc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:53:42 by acid.burn         #+#    #+#             */
-/*   Updated: 2022/11/09 15:54:51 by acid.burn        ###   ########.fr       */
+/*   Updated: 2022/11/12 14:29:04 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	init_xpm(t_data *data)
 {
 		data->player = mlx_xpm_file_to_image(data->mlx,
 			"bin/collectables/Baren.xpm", &data->tile_size, &data->tile_size);
-		data->start = mlx_xpm_file_to_image(data->mlx,
+		data->position = mlx_xpm_file_to_image(data->mlx,
 			"bin/collectables/Ice.xpm", &data->tile_size, &data->tile_size);
 		data->collectable = mlx_xpm_file_to_image(data->mlx,
 			"bin/collectables/Lava.xpm", &data->tile_size, &data->tile_size);
