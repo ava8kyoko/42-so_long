@@ -46,7 +46,7 @@ typedef struct s_data
 
 int		main(int argc, char **argv);
 
-void keybind(t_data *data)
+int		keybind(int key, t_data *data);
 void	mlx_game(t_data *data);
 void	valid_file(t_data *data, char *file);
 void	valid_map(t_data *data);

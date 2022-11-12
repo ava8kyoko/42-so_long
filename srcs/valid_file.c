@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_file.c                                    :+:      :+:    :+:   */
+/*   valid_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:08:44 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/02 14:36:08 by acid.burn        ###   ########.fr       */
+/*   Updated: 2022/11/09 17:24:21 by acid.burn        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,29 @@ static char	**read_file(char *file, size_t max_line)
 	while (i <= max_line)
 	{
 		new_file[i] = get_next_line(fd);
+		printf("\n");
+		printf("new_file[0] : %s\n", new_file[0]);
+		printf("%zu\n", i);
+		printf("%s", new_file[i]);
 		if (!new_file[i++])
 			break;
 	}
+	printf("\n");
+	printf("new_file[0] : %s\n", new_file[0]);
 	printf("%zu\n", i);
 	if (!new_file[0])
 		exit_error("empty file", new_file);
 	return (new_file);
 }
 
-static void validate_extension(char *file)
+static void valid_extension(char *file)
 {	
 	if (!strncmp_rev(file, ".ber", 4))
 		exit_error("filename error", 0);
 }
 
-void	validate_file(t_data *data, char *file)
+void	valid_file(t_data *data, char *file)
 {
-	validate_extension(file);
+	valid_extension(file);
 	data->map = read_file(file, 18); // max height
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:18:31 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/02 03:15:38 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:34:14 by acid.burn        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	exit_error(char *message, char **tab)
 {
-	free_tab(tab);
+	if (tab)
+		printf("tab\n");
+	// free_tab(tab);
 	ft_putstr_fd(2, message, 'n');
 	exit(EXIT_FAILURE);
 }
