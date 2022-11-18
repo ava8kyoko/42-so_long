@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:53:42 by acid.burn         #+#    #+#             */
-/*   Updated: 2022/11/12 14:29:04 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/17 22:01:13 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	init_xpm(t_data *data)
 		data->collectable = mlx_xpm_file_to_image(data->mlx,
 			"bin/collectables/Lava.xpm", &data->tile_size, &data->tile_size);
 		data->exit = mlx_xpm_file_to_image(data->mlx,
-			"bin/collectables/Terran.xpm", &data->tile_size, &data->tile_size);	
+			"bin/collectables/Terran.xpm", &data->tile_size, &data->tile_size);
 }
 
 void	mlx_game(t_data *data)
