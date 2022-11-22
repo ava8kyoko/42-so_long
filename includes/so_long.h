@@ -31,10 +31,13 @@ typedef struct s_data
 /*
 ** Images
 */
-	void	*player;
-	void	*position;
 	void	*collectable;
 	void	*exit;
+	void	*player;
+	void	*position;
+	void	*tile;
+	void	*wall;
+	
 	int		tile_size;
 	// size_t	empty; // 0
 	// size_t	wall; // 1
