@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:48:48 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/17 21:58:44 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:39:48 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,30 @@ static void	valid_walls(t_data *data)
 
 static void	valid_characters(t_data *data)
 {
-	size_t	line;
-	size_t	i;
-
-	line = -1;
-	while (++line < data->height)
+	data->map_y = -1;
+	while (++data->map_y < data->height)
 	{
-		i = -1;
-		while (++i < data->width)
+		data->map_x = -1;
+		while (++data->map_x < data->width)
 		{
-			if (data->map[line][i] == '0' || data->map[line][i] == '1')
+			if (data->map[data->map_y][data->map_x] == '0'
+				|| data->map[data->map_y][data->map_x] == '1')
 				;
-			else if (data->map[line][i] == 'P')
-				data->nb_position++;
-			else if (data->map[line][i] == 'C')
-				data->nb_collectable++;
-			else if (data->map[line][i] == 'E')
+			else if (data->map[data->map_y][data->map_x] == 'P')
+			{
+				data->nb_player++;
+				data->pos_x = data->map_x;
+				data->pos_y = data->map_y;
+			}
+			else if (data->map[data->map_y][data->map_x] == 'C')
+				data->nb_item++;
+			else if (data->map[data->map_y][data->map_x] == 'E')
 				data->nb_exit++;
 			else
 				exit_error("map contains bad character", data->map);
 		}
 	}
-	if (data->nb_position != 1 || !data->nb_collectable
-		|| data->nb_exit != 1)
+	if (data->nb_player != 1 || !data->nb_item || data->nb_exit != 1)
 		exit_error("Must contains 1 P, 1 E and at least 1 C", data->map);
 }
 
@@ -84,13 +85,15 @@ static void	valid_dimensions(t_data *data)
 void	valid_map(t_data *data)
 {	
 	valid_dimensions(data);
-	data->nb_position = 0;
-	data->nb_collectable = 0;
+	data->nb_player = 0;
+	data->nb_item = 0;
 	data->nb_exit = 0;
 	valid_characters(data);
 	valid_walls(data);
-	data->mlx_x = 1000;
-	data->mlx_y = 900;
+	data->nb_move = 0;
+	data->tile_size = 64;
+	data->width *= data->tile_size;
+	data->height *= data->tile_size;
 	printf("data->width : %zu\n", data->width);
 	printf("data->height : %zu\n", data->height);
 }

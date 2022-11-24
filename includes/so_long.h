@@ -6,10 +6,8 @@
 # include <stdbool.h>
 # include <stdio.h>
 # include "mlx/minilibx_opengl/mlx.h"
-// # include "mlx/minilibx-linux/mlx.h"
 
 
-// https://stackoverflow.com/questions/351733/how-would-one-write-object-oriented-code-in-c
 typedef struct s_data
 {
 /*
@@ -22,36 +20,58 @@ typedef struct s_data
 /*
 ** mlx values
 */
-
 	void	*mlx;
-	int		mlx_x;
-	int		mlx_y;
-	void	*mlx_win;
+	int		win_x;
+	int		win_y;
+	void	*window;
+	int		tile_size;
 
 /*
-** Images
+** Map indexes
 */
-	void	*collectable;
+	size_t	map_x;
+	size_t	map_y;
+
+/*
+** Images 
+** P = player
+** C = item
+** E = exit
+*/
 	void	*exit;
-	void	*player;
-	void	*position;
-	void	*tile;
+	void	*floor;
+	void	*item;
+	void	*player_down;
+	void	*player_left;
+	void	*player_right;
+	void	*player_top;
 	void	*wall;
-	
-	int		tile_size;
-	// size_t	empty; // 0
-	// size_t	wall; // 1
-	size_t	nb_position; // P = départ
-	size_t	nb_collectable; // C
-	size_t	nb_exit; // E
-	// size_t	pos_x;
-	// size_t	pos_y;
-}				t_data;
 
-int		main(int argc, char **argv);
 
+/*
+** Tile types number
+*/
+	size_t	nb_move;
+	size_t	nb_player;
+	size_t	nb_item;
+	size_t	nb_exit;
+
+/*
+** Player position
+*/
+	size_t	pos_x;
+	size_t	pos_y;
+}			t_data;
+
+
+/*
+** so_long fonctions
+*/
+int		exit_game(t_data *data);
+void	init_xpm(t_data *data);
 int		keybind(int key, t_data *data);
-void	mlx_game(t_data *data);
+int		main(int argc, char **argv);
+void	put_image_on_map(t_data *data);
 void	valid_file(t_data *data, char *file);
 void	valid_map(t_data *data);
 

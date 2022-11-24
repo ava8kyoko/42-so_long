@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:08:44 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/17 21:57:13 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:51:09 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static char	**read_file(char *file, size_t max_line)
 	printf("\n");
 	if (!new_file[0])
 		exit_error("empty file", new_file);
+	close(fd);
 	return (new_file);
 }
 
