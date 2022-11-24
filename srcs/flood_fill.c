@@ -6,7 +6,7 @@
 /*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:24:50 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/24 10:32:22 by acid.burn        ###   ########.fr       */
+/*   Updated: 2022/11/24 11:37:32 by acid.burn        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void flood_fill(t_data *data, size_t x, size_t y)
 		if (data->floodfill_map[y][x] == 'C')
 			data->floodfill_item--;
 		data->floodfill_map[y][x] = 'F';
+		if (!data->floodfill_exit && data->floodfill_item) // need to test
+			return ;
 		flood_fill(data, x, y - 1);
 		flood_fill(data, x, y + 1);
 		flood_fill(data, x - 1, y);
