@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:56:22 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/23 22:21:46 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/24 10:36:29 by acid.burn        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	{
 		valid_file(&data, argv[1]);
 		valid_map(&data);
+		valid_floodfill(&data);
 		game(&data);
 	}
 	exit_error("no map", 0);

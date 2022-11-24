@@ -20,17 +20,24 @@ typedef struct s_data
 /*
 ** mlx values
 */
-	void	*mlx;
+	int		tile_size;
 	int		win_x;
 	int		win_y;
+	void	*mlx;
 	void	*window;
-	int		tile_size;
 
 /*
 ** Map indexes
 */
 	size_t	map_x;
 	size_t	map_y;
+
+/*
+** Flood fill data
+*/
+	char	**floodfill_map;
+	size_t	floodfill_exit;
+	size_t	floodfill_item;
 
 /*
 ** Images 
@@ -51,10 +58,10 @@ typedef struct s_data
 /*
 ** Tile types number
 */
-	size_t	nb_move;
-	size_t	nb_player;
 	size_t	nb_item;
 	size_t	nb_exit;
+	size_t	nb_move;
+	size_t	nb_player;
 
 /*
 ** Player position
@@ -73,6 +80,7 @@ int		keybind(int key, t_data *data);
 int		main(int argc, char **argv);
 void	put_image_on_map(t_data *data);
 void	valid_file(t_data *data, char *file);
+void	valid_floodfill(t_data *data);
 void	valid_map(t_data *data);
 
 #endif

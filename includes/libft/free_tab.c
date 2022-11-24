@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:17:26 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/23 23:13:22 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/24 09:32:48 by acid.burn        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_tab(char **tab)
+void	**free_tab(char **tab)
 {
-	int		i;
+	size_t		i;
 
 	if (tab)
 	{
-		i = 0;
-		while (tab[i])
-			free(tab[i++]);
+		i = -1;
+		while (tab[++i])
+			tab[i] = free_array(tab[i]);
 		free(tab);
 	}
+	return (0);
 }
