@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:53:42 by acid.burn         #+#    #+#             */
-/*   Updated: 2022/11/23 20:31:10 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:24:25 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	exit_game(t_data *data)
 	else
 		printf("Exit game :  win  ><>\n");
 	destroy_mlx(data);
-	free(data->map);
+	free_tab(data->map);
 	exit (0);
 }

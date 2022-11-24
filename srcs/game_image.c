@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:34:22 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/23 20:31:31 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:12:31 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ void put_image_on_map(t_data *data)
 void	init_xpm(t_data *data)
 {
 	data->item = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/item.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/item.xpm", &data->tile_size, &data->tile_size);
 	data->exit = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/exit.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/exit.xpm", &data->tile_size, &data->tile_size);
 	data->player_top = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/player_top.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/player_top.xpm", &data->tile_size, &data->tile_size);
 	data->player_left = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/player_left.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/player_left.xpm", &data->tile_size, &data->tile_size);
 	data->player_right = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/player_right.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/player_right.xpm", &data->tile_size, &data->tile_size);
 	data->player_down = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/player_down.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/player_down.xpm", &data->tile_size, &data->tile_size);
 	data->floor = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/floor.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/floor.xpm", &data->tile_size, &data->tile_size);
 	data->wall = mlx_xpm_file_to_image(data->mlx,
-		"bin/collectables/wall.xpm", &data->tile_size, &data->tile_size);
+		"bin/img/wall.xpm", &data->tile_size, &data->tile_size);
 }
