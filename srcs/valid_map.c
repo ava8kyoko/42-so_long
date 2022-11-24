@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:48:48 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/23 21:28:07 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:22:24 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ static void	valid_walls(t_data *data)
 	while (++i < data->width)
 	{
 		if (data->map[0][i] != '1' || data->map[data->height - 1][i] != '1')
-			exit_error("walls map must contain only 1 character", data->map);
+			exit_error("walls map must contain only '1'", data->map);
 	}
 	i = 0;
 	while (++i < data->height - 1)
 	{
 		if (data->map[i][0] != '1' || data->map[i][data->width - 1] != '1')
-			exit_error("walls map must contain only 1 character", data->map);
+			exit_error("walls map must contain only '1'", data->map);
 	}
 }
 
@@ -56,7 +56,7 @@ static void	valid_characters(t_data *data)
 		}
 	}
 	if (data->nb_player != 1 || !data->nb_item || data->nb_exit != 1)
-		exit_error("Must contains 1 P, 1 E and at least 1 C", data->map);
+		exit_error("Must contains 1 'P', 1 'E' and at least 1 'C'", data->map);
 }
 
 static void	valid_dimensions(t_data *data)
@@ -72,7 +72,8 @@ static void	valid_dimensions(t_data *data)
 	while (data->map[++data->height])
 	{
 		len = ft_strlen(data->map[data->height]);
-		if (data->map[data->height][len - 1] == '\n')
+		if (data->map[data->height][len - 1] == '\n'
+			&& data->map[data->height + 1])
 			len--;
 		if (len != data->width)
 			exit_error("lenght lines aren't equivalent to width", data->map);

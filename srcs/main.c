@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:56:22 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/23 20:54:32 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:21:46 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 static void	game(t_data *data)
 {
 	data->mlx = mlx_init();
-	data->window = mlx_new_window(data->mlx, data->width, data->height, "so_long");
+	data->window = mlx_new_window(data->mlx, data->width, data->height,
+			"so_long");
 	init_xpm(data);
 	put_image_on_map(data);
 	mlx_hook(data->window, 2, 1L << 0, &keybind, data);
@@ -23,7 +24,7 @@ static void	game(t_data *data)
 	mlx_loop(data->mlx);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 

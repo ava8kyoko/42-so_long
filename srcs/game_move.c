@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:01:23 by acid.burn         #+#    #+#             */
-/*   Updated: 2022/11/23 21:20:23 by mchampag         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:21:12 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ static void	move(t_data *data, void *player, size_t x, size_t y)
 int	keybind(int key, t_data *data)
 {
 	if (key == 13)
-		move(data, data->player_top, 0, -1); // forward
+		move(data, data->player_top, 0, -1);
 	else if (key == 1)
-		move(data, data->player_down, 0, 1); // backward
+		move(data, data->player_down, 0, 1);
 	else if (key == 0)
-		move(data, data->player_left, -1, 0); // left
+		move(data, data->player_left, -1, 0);
 	else if (key == 2)
-		move(data, data->player_right, 1, 0); // right
+		move(data, data->player_right, 1, 0);
 	else if (key == 53)
 		exit_game(data);
 	return (0);
