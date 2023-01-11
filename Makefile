@@ -17,7 +17,7 @@ MINILIBX_PATH = includes/mlx/minilibx_opengl/
 
 # Sources files
 S = srcs/
-SRCS_FILES =	flood_fill.c game_exit.c game_image.c game_move.c main.c valid_file.c valid_map.c
+SRCS_FILES =	game_exit.c game_image.c game_move.c main.c valid_file.c valid_floodfill.c valid_map.c
 SRCS =			$(addprefix $S, $(SRCS_FILES))
 
 # Objects conversion
