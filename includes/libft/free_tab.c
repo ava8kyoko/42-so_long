@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acid.burn <acid.burn@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:17:26 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/24 09:32:48 by acid.burn        ###   ########.fr       */
+/*   Updated: 2023/01/11 13:09:07 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	**free_tab(char **tab)
 {
-	size_t		i;
+	size_t	i;
 
 	if (tab)
 	{
