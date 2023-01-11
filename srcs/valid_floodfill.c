@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:24:50 by mchampag          #+#    #+#             */
-/*   Updated: 2023/01/11 10:59:47 by mchampag         ###   ########.fr       */
+/*   Updated: 2023/01/11 11:11:07 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static void	flood_fill(t_data *data, size_t x, size_t y)
 		flood_fill(data, x - 1, y);
 		flood_fill(data, x + 1, y);
 	}
-	if (data->floodfill_map[y][x] == 'E')
+	if (!data->floodfill_item && data->floodfill_exit
+		&& data->floodfill_map[y][x] == 'E')
 		data->floodfill_exit--;
 	return ;
 }
