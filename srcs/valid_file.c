@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:08:44 by mchampag          #+#    #+#             */
-/*   Updated: 2022/11/23 19:51:09 by mchampag         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:27:32 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	**read_file(char *file, size_t max_line)
 	if (!new_file)
 		exit_error("ft_calloc file error", 0);
 	i = 0;
-	while (i <= max_line)
+	while (i <= max_line - 1)
 	{
 		new_file[i] = get_next_line(fd);
 		printf("%s", new_file[i]);
@@ -33,8 +33,8 @@ static char	**read_file(char *file, size_t max_line)
 			break ;
 	}
 	printf("\n");
-	if (!new_file[0])
-		exit_error("empty file", new_file);
+	if (!new_file[0] || new_file[max_line - 1])
+		exit_error("empty file or too big", new_file);
 	close(fd);
 	return (new_file);
 }
@@ -49,4 +49,5 @@ void	valid_file(t_data *data, char *file)
 {
 	valid_extension(file);
 	data->map = read_file(file, 18);
+	printf("sdgfsgsr ");
 }

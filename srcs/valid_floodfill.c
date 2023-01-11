@@ -6,7 +6,7 @@
 /*   By: mchampag <mchampag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 22:24:50 by mchampag          #+#    #+#             */
-/*   Updated: 2023/01/11 11:11:07 by mchampag         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:02:33 by mchampag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 static void	flood_fill(t_data *data, size_t x, size_t y)
 {
-	if (data->floodfill_map[y][x] == '0' || data->floodfill_map[y][x] == 'C'
-		|| data->floodfill_map[y][x] == 'P')
+	if (data->floodfill_map[y][x] == 'E')
+		data->floodfill_exit--;
+	if (ft_strchr("0CEP", data->floodfill_map[y][x]))
 	{
 		if (data->floodfill_map[y][x] == 'C')
 			data->floodfill_item--;
@@ -25,10 +26,6 @@ static void	flood_fill(t_data *data, size_t x, size_t y)
 		flood_fill(data, x - 1, y);
 		flood_fill(data, x + 1, y);
 	}
-	if (!data->floodfill_item && data->floodfill_exit
-		&& data->floodfill_map[y][x] == 'E')
-		data->floodfill_exit--;
-	return ;
 }
 
 void	valid_floodfill(t_data *data)
